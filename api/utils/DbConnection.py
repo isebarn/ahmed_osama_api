@@ -16,4 +16,4 @@ def client():
 def get_collection(collection_name):
   collection = databases.get(collection_name, None)
   if collection is not None:
-    return client()[collection.get('database')][collection.get('collection')]
+    return client()[os.environ.get('MONGODB_DB_NAME')][collection.get('collection')]
