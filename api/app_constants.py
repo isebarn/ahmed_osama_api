@@ -1,7 +1,9 @@
+import os
+
 databases = {
-  "examined": {
-    "database": "data",
-    "collection": "examined"
+  "collection": {
+    "database": os.environ.get('MONGODB_DB_NAME'),
+    "collection": os.environ.get('MONGODB_COLLECTION')
   }
 }
 

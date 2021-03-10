@@ -7,7 +7,7 @@ def get_url_list(aggregate, filters):
 
   # mongodb
   checked = [x['look_id']
-    for x in get_collection("examined").find({}, {"look_id": 1})]
+    for x in get_collection().find({}, {"look_id": 1})]
 
   look_id = choice([x for x in data.look_id.to_list() if x not in checked])
   result = list(data[data.look_id == look_id].T.to_dict().values())

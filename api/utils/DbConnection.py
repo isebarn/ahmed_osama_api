@@ -13,7 +13,7 @@ def client():
     db_connection.the_database.authenticate(mongodb_username, mongodb_password, source='admin')
   return db_connection
 
-def get_collection(collection_name):
-  collection = databases.get(collection_name, None)
+def get_collection():
+  collection = databases.get('collection', None)
   if collection is not None:
-    return client()[os.environ.get('MONGODB_DB_NAME')][collection.get('collection')]
+    return client()[collection['database']][collection['collection']]
