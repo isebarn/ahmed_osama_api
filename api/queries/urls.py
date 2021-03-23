@@ -17,4 +17,7 @@ def get_url_list(aggregate, filters):
   if len(result) % 2 != 0:
     result[0].update({'flex': 12})
 
-  return result
+  return {
+    "style": result,
+    "checked": len(checked)
+  }
